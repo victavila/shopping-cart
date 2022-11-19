@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 import { useAppDispatch, useAppSelector } from "../app/hooks";
 import { receivedProducts } from "../features/productsSlice";
+import { addToCart } from "../features/cartSlice";
 import { getProducts } from "../utils/api";
 
 const Shop = () => {
@@ -27,7 +28,7 @@ const Shop = () => {
                   <p>${product.price}</p>
                 </div>
                 <div>
-                  <button className="btn">Add to Cart</button>
+                  <button className="btn" onClick={() => dispatch(addToCart(product))}>Add to Cart</button>
                 </div>
               </div>
             </li>
