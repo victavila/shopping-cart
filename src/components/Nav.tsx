@@ -1,7 +1,10 @@
 import { Link } from "react-router-dom";
 import { FaShoppingCart } from "react-icons/fa"
+import { useAppSelector } from "../app/hooks";
 
 const Nav = () => {
+  const { amount } = useAppSelector(state => state.cart);
+  
   return (
     <nav>
       <div className="nav">
@@ -21,6 +24,7 @@ const Nav = () => {
             <Link className="nav__link" to="/cart">
               <li>
                 <FaShoppingCart />
+                <span>{amount}</span>
               </li>
             </Link>
           </ul>

@@ -27,10 +27,20 @@ const cartSlice = createSlice({
           quantity: 1
         })
       }
+    },
+    calculateTotals(state) {
+      let amount = 0;
+      let total = 0;
+      state.cartItems.forEach(item => {
+        amount += item.quantity;
+        total += item.quantity * item.price;
+      })
+      state.amount = amount;
+      state.total = total;
     }
   }
 })
 
-export const { addToCart } = cartSlice.actions;
+export const { addToCart, calculateTotals } = cartSlice.actions;
 
 export default cartSlice.reducer;
