@@ -1,5 +1,5 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
-import { CartProps, ProductProps } from '../types/types';
+import { CartItemProps, CartProps, ProductProps } from '../types/types';
 
 const initialState: CartProps = {
   cartItems: [],
@@ -15,16 +15,20 @@ const cartSlice = createSlice({
       const cartLength = state.cartItems.length;
       let found = false;
       for (let i = 0; i < cartLength; i++) {
-        if (action.payload.title === state.cartItems[i].title) {
-          state.cartItems[i].quantity += 1;
+        if (action.payload.title === state.cartItems[i].title ) {
+          if (state.cartItems[i].quantity < 99) {
+            state.cartItems[i].quantity += 1;
+          }
           found = true;
         }
       }
       if (!found) {
         state.cartItems.push({
           title: action.payload.title,
+          image: action.payload.image,
           price: +action.payload.price,
-          quantity: 1
+          quantity: 1,
+          id: action.payload.id
         })
       }
     },
@@ -37,10 +41,28 @@ const cartSlice = createSlice({
       })
       state.amount = amount;
       state.total = total;
+    },
+    incrementQuantity(state, action: PayloadAction<CartItemProps>) {
+      let selectedItem = state.cartItems.find(item => item.title === action.payload.title);
+      
+      if (selectedItem) {
+        if (selectedItem.quantity < 99) {
+          selectedItem.quantity++;
+        }
+      }
+    },
+    decrementQuantity(state, action: PayloadAction<CartItemProps>) {
+      let selectedItem = state.cartItems.find(item => item.title === action.payload.title);
+      
+      if (selectedItem) {
+        if (selectedItem.quantity > 1) {
+          selectedItem.quantity--;
+        }
+      }
     }
   }
 })
 
-export const { addToCart, calculateTotals } = cartSlice.actions;
+export const { addToCart, calculateTotals, incrementQuantity, decrementQuantity } = cartSlice.actions;
 
 export default cartSlice.reducer;

@@ -9,8 +9,10 @@ export interface ProductProps {
 
 export interface CartItemProps {
   title: string,
+  image: string
   price: number,
-  quantity: number
+  quantity: number,
+  id: number
 }
 
 export interface CartProps {
