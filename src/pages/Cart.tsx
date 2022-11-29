@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import { useAppDispatch, useAppSelector } from "../app/hooks";
-import { FaChevronUp, FaChevronDown } from "react-icons/fa";
-import { decrementQuantity, incrementQuantity } from "../features/cartSlice";
+import { FaChevronUp, FaChevronDown, FaTrashAlt } from "react-icons/fa";
+import { decrementQuantity, incrementQuantity, deleteItem } from "../features/cartSlice";
 
 const Cart = () => {
   const dispatch = useAppDispatch();
@@ -37,6 +37,11 @@ const Cart = () => {
                           style={{cursor: item.quantity < 2 ? "not-allowed": "pointer"}}
                           onClick={() => dispatch(decrementQuantity(item))} />
                         </div>
+                      </div>
+                      <div className="item__deleteBtn">
+                        <button>
+                          <FaTrashAlt onClick={() => dispatch(deleteItem(item))} />
+                        </button>
                       </div>
                     </div>
                   </div>
