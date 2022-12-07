@@ -58,7 +58,11 @@ const Cart = () => {
           }
         </div>
         <div className="cart__total">
-          
+          <div></div>
+          <div className="cart__total">Total: $ {(Math.round(total * 100) / 100).toFixed(2)}</div>
+          <div className="cart__checkout">
+            <button className="checkout__btn">Checkout</button>
+          </div>
         </div>
       </div>
     </div>

@@ -6,31 +6,31 @@ const Nav = () => {
   const { amount } = useAppSelector(state => state.cart);
   
   return (
-    <nav>
+    <header>
       <div className="nav">
         <div className="nav__logo">
-          <Link to="/">
-            Shopping Cart
+          <Link className="logo__link" to="/">
+            Fake Store
           </Link>
         </div>
-        <div className="nav__links">
-          <ul>
-            <Link className="nav__link" to="/">
-              <li>Home</li>
-            </Link>
-            <Link className="nav__link" to="/shop">
-              <li>Shop</li>
-            </Link>
-            <Link className="nav__link" to="/cart">
-              <li>
+        <ul className="nav__links">
+          <Link className="nav__link link--underline" to="/">
+            <li>Home</li>
+          </Link>
+          <Link className="nav__link link--underline" to="/shop">
+            <li>Shop</li>
+          </Link>
+          <Link className="nav__link" to="/cart">
+            <li>
+              <div className="icon__container">
                 <FaShoppingCart />
-                <span>{amount}</span>
-              </li>
-            </Link>
-          </ul>
-        </div>
+                <div className="amount__container">{amount}</div>
+              </div>
+            </li>
+          </Link>
+        </ul>
       </div>
-    </nav>
+    </header>
   )
 }
 
