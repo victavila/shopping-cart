@@ -5,7 +5,7 @@
   font-family: sans-serif;
 }
 
-header {
+nav {
   background-color: #232f3e;
   min-height: 10vh;
   display: flex;
@@ -71,4 +71,65 @@ header {
 
 .icon__container > svg {
   font-size: 1.5rem;
+}
+
+.shop__container {
+  background-color: #ebebeb;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.shop__items {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  row-gap: 2rem;
+  column-gap: 2rem;
+  padding-top: 15px;
+  padding-bottom: 20px;
+}
+
+.shop__product {
+  border: 1px solid #eee;
+  border-radius: 15px;
+  list-style: none;
+  background-color: #fff;
+  max-width: 450px;
+}
+
+.product {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+}
+
+.product__img {
+  height: 12rem;
+  align-self: center;
+  padding: 5px;
+}
+
+.product__info {
+  border-top: 1px solid #eee;
+  padding: 10px;
+}
+
+.product__info > h3 {
+  padding-bottom: 10px;
+}
+
+.product__btn {
+  align-self: center;
+  padding-bottom: 10px;
+}
+
+.btn {
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  background-color: #232f3e;
+  color: #fff;
+  padding: 15px 20px;
+  cursor: pointer;
 }

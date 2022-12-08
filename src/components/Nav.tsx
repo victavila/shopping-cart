@@ -6,7 +6,7 @@ const Nav = () => {
   const { amount } = useAppSelector(state => state.cart);
   
   return (
-    <header>
+    <nav>
       <div className="nav">
         <div className="nav__logo">
           <Link className="logo__link" to="/">
@@ -30,7 +30,7 @@ const Nav = () => {
           </Link>
         </ul>
       </div>
-    </header>
+    </nav>
   )
 }
 

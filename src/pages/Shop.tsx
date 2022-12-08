@@ -16,25 +16,23 @@ const Shop = () => {
   const products = useAppSelector(state => state.products);
   
   return (
-    <div className="shop">
-      <div>
-        <ul className="shop__items">
-          {products.map(product => (
-            <li className="shop__product" key={product.id}>
-              <div className="product">
-                <img className="product__img" src={product.image} alt={product.title}></img>
-                <div className="product__info">
-                  <h3>{product.title}</h3>
-                  <p>${product.price}</p>
-                </div>
-                <div>
-                  <button className="btn" onClick={() => dispatch(addToCart(product))}>Add to Cart</button>
-                </div>
+    <div className="shop__container">
+      <ul className="shop__items">
+        {products.map(product => (
+          <li className="shop__product" key={product.id}>
+            <div className="product">
+              <img className="product__img" src={product.image} alt={product.title}></img>
+              <div className="product__info">
+                <h3>{product.title}</h3>
+                <p>${product.price}</p>
               </div>
-            </li>
-          )) }
-        </ul>
-      </div>
+              <div className="product__btn">
+                <button className="btn" onClick={() => dispatch(addToCart(product))}>Add to Cart</button>
+              </div>
+            </div>
+          </li>
+        )) }
+      </ul>
     </div>
   )
 }
