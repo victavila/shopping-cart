@@ -2,8 +2,19 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  font-family: sans-serif;
+  font-family: 'Roboto', sans-serif;
 }
+
+body {
+  height: 100%;
+  background-color: #ebebeb;
+}
+
+/*
+-------
+Nav
+-------
+*/
 
 nav {
   background-color: #232f3e;
@@ -73,8 +84,13 @@ nav {
   font-size: 1.5rem;
 }
 
+/*
+------------
+Shop page
+------------
+*/
+
 .shop__container {
-  background-color: #ebebeb;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -132,4 +148,119 @@ nav {
   color: #fff;
   padding: 15px 20px;
   cursor: pointer;
+}
+
+.btn:hover {
+  background-color: #6387b3;
+}
+
+/*
+------------
+Cart Page
+------------
+*/
+
+.cart {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.cart__title {
+  padding: 25px 0px;
+  font-size: 2rem;
+}
+
+.cart__container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3rem;
+  min-width: 50%;
+}
+
+.cart__items {
+  border: solid 1px #eee;
+  border-radius: 15px;
+  background-color: #fff;
+  padding: 10px;
+  width: 80%;
+}
+
+.cart__item {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  gap: 2rem;
+  padding-bottom: 20px;
+}
+
+.item__image > img {
+  width: 50px;
+}
+
+.item__info {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.top__container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.top__container > h3 {
+  width: 50%;
+}
+
+.bot__container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.btn__delete {
+  border: none;
+  background-color: #fff;
+  color: #77898B;
+  cursor: pointer;
+}
+
+.item__quantity {
+  display: flex;
+  align-items: center;
+  gap: .5rem;
+  border: solid 1px black;
+  padding: 3px 8px;
+}
+
+.cart__total {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: solid 1px #eee;
+  border-radius: 15px;
+  background-color: #fff;
+  width: 50%;
+  padding: 20px;
+}
+
+.total__display {
+  display: flex;
+  gap: 12rem;
+}
+
+.cart__checkout {
+  padding-top: 10px;
+}
+
+.cart__empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  height: 250px;
+  padding-top: 15px;
+  padding-bottom: 15px;
 }
