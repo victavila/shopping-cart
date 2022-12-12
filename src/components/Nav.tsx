@@ -9,18 +9,18 @@ const Nav = () => {
     <nav>
       <div className="nav">
         <div className="nav__logo">
-          <Link className="logo__link" to="/">
+          <Link className="logo__link" to="/shopping-cart/">
             Fake Store
           </Link>
         </div>
         <ul className="nav__links">
-          <Link className="nav__link link--underline" to="/">
+          <Link className="nav__link link--underline" to="/shopping-cart/">
             <li>Home</li>
           </Link>
-          <Link className="nav__link link--underline" to="/shop">
+          <Link className="nav__link link--underline" to="/shopping-cart/shop">
             <li>Shop</li>
           </Link>
-          <Link className="nav__link" to="/cart">
+          <Link className="nav__link" to="/shopping-cart/cart">
             <li>
               <div className="icon__container">
                 <FaShoppingCart />

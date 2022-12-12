@@ -15,7 +15,7 @@ const Home = () => {
       <img className="home__background" src={background} alt="background"></img>
       <button className="btn__shop" onClick={() => toggleNavigate()}>Shop Now</button>
       {navigateActive ? 
-      <Navigate to="/shop" />:
+      <Navigate to="/shopping-cart/shop" />:
       <></>}
     </div>
   )
