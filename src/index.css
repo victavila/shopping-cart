@@ -71,8 +71,8 @@ nav {
   position: absolute;
   top: -0.6rem;
   right: -0.9rem;
-  width: 1.25rem;
-  height: 1.25rem;
+  width: 1.45rem;
+  height: 1.45rem;
   border-radius: 50%;
   background-color: #440fd6;
   display: flex;
@@ -212,6 +212,7 @@ Cart Page
   align-items: center;
   gap: 3rem;
   min-width: 50%;
+  padding-bottom: 30px;
 }
 
 .cart__items {
@@ -243,6 +244,7 @@ Cart Page
 .top__container {
   display: flex;
   justify-content: space-between;
+  padding-bottom: 10px;
 }
 
 .top__container > h3 {
@@ -280,9 +282,14 @@ Cart Page
   padding: 20px;
 }
 
+.cart__total > h3 {
+  font-size: 1.5rem;
+}
+
 .total__display {
   display: flex;
   gap: 12rem;
+  font-size: 1.2rem;
 }
 
 .cart__checkout {
